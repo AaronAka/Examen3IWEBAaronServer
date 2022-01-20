@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1>Lista de Viajes</h1>
+    <form action="/listaviajesbusqueda" method="POST">
+        <input type="text" name="origen" placeholder="El Origen">
+        <input type="text" name="destino" placeholder="El Destino">
+        <input type="text" name="conductor" placeholder="El Conductor">
+        
+        <input type="submit" value="Buscar" disabled>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Fecha</th>
+                <th>ID Conductor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% viajes.forEach (viaje => { %>
+                <tr>
+                    <td><%= viaje.origen %></td>
+                    <td><%= viaje.destino %></td>
+                    <td><%= viaje.fecha %> </td>
+                    <td><%= viaje.id_conductor %></td>
+                </tr>    
+                
+            <%}) %>
+        </tbody>
+    </table>
+</body>
+</html>

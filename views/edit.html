@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar usuario</title>
+</head>
+<body>
+    <form action="/edit/<%= usuario.id %>" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" value="<%= usuario.nombre %>">
+        <input type="text" name="apellido" placeholder="Tu apellido" value="<%= usuario.apellido %>">
+        <input type="text" name="email" placeholder="Tu email" value="<%= usuario.email %>">
+        <input type="text" name="password" placeholder="Tu contraseña" value="<%= usuario.password %>">
+        <input type="submit" value="Guardar">
+    </form>
+    <form action="/">
+        <input type="submit" value="Cancelar">
+    </form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1>CRUD de Usuarios</h1>
+    <form action="/add" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre">
+        <input type="text" name="apellido" placeholder="Tu apellido">
+        <input type="text" name="email" placeholder="Tu email">
+        <input type="text" name="password" placeholder="Tu contraseña">
+        <input type="submit" value="Guardar">
+    </form>
+    <form action="/findUser" method="get">
+        <input type="search" name="namesurnameuser" placeholder="Introduzca el nombre y/o apellidos del usuario">
+        <input type="submit" value="Buscar">
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Contraseña</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% usuarios.forEach (usuario => { %>
+                <tr>
+                    <td><%= usuario.nombre %></td>
+                    <td><%= usuario.apellido %></td>
+                    <td><%= usuario.email %></td>
+                    <td><%= usuario.password %></td>
+                    <td>
+                        <a href="/viajespasajero/<%= usuario._id %>">Viajes como pasajero</a>
+                        <a href="/viajesconductor/<%= usuario._id %>">Viajes como conductor</a>
+                        <a href="/delete/<%= usuario._id %>">Eliminar</a>
+                        <a href="/edit/<%= usuario._id %>">Editar</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <form method="get" action="/listaviajes">
+        <button type="submit">Lista de Viajes</button>
+    </form>
+</body>
+</html>
