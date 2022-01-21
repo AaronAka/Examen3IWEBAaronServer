@@ -21,7 +21,7 @@ app.use(express.json());
 let mongo = require('mongodb');
 let gestorBD = require("./services/gestorBD");
 gestorBD.init(app, mongo);
-app.set('db', 'mongodb://root:root@cluster0-shard-00-00.xrhm0.mongodb.net:27017,cluster0-shard-00-01.xrhm0.mongodb.net:27017,cluster0-shard-00-02.xrhm0.mongodb.net:27017/ExamenIvan?ssl=true&replicaSet=atlas-i6aji1-shard-0&authSource=admin&retryWrites=true&w=majority');
+app.set('db', 'mongodb://root:root@cluster0-shard-00-00.xrhm0.mongodb.net:27017,cluster0-shard-00-01.xrhm0.mongodb.net:27017,cluster0-shard-00-02.xrhm0.mongodb.net:27017/Examen3Aaron?ssl=true&replicaSet=atlas-i6aji1-shard-0&authSource=admin&retryWrites=true&w=majority');
 
 //Rutas/controladores por lógica
 require("./routes/users")(app, gestorBD);  // (app, param1, param2, etc.)
