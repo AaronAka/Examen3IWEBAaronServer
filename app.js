@@ -32,6 +32,8 @@ require("./routes/flickr_api")(app, https);
 require("./routes/messages")(app, gestorBD);
 require("./routes/conversations")(app, gestorBD);
 require("./routes/images")(app, gestorBD);
+require("./routes/articulos")(app,gestorBD);
+require("./routes/pujas")(app,gestorBD);
 
 //Controlador en caso de 404
 app.get('*',function (req, res,next) {
